@@ -1,7 +1,7 @@
 {
-  "name": "my-component",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "author": "Your Name",
+  "author": "{{author}}",
   "license": "MIT",
   "module": "dist/index.esm.js",
   "main": "dist/quasar.common.js",

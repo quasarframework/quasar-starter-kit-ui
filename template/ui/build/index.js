@@ -1,8 +1,7 @@
 process.env.NODE_ENV = 'production'
 
 const
-  type = process.argv[2],
-  parallel = !type && require('os').cpus().length > 1,
+  parallel = require('os').cpus().length > 1,
   { join } = require('path'),
   { createFolder } = require('./utils'),
   runJob = parallel ? require('child_process').fork : require,

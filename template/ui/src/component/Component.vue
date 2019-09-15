@@ -1,12 +1,12 @@
 <template>
-  <q-badge class="my-component" label="My Component" />
+  <q-badge class="{{name}}" label="{{productName}}" />
 </template>
 
 <script>
 import { QBadge } from 'quasar'
 
 export default {
-  name: 'MyComponent',
+  name: '{{productName}}',
 
   components: {
     QBadge
