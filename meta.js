@@ -1,3 +1,5 @@
+const { helpers, complete } = require('./utils')
+
 module.exports = {
   prompts: {
     name: {
@@ -41,7 +43,7 @@ module.exports = {
         {
           name: 'A Quasar App Extension',
           value: 'ae',
-          default: true
+          checked: true
         }
       ]
     },
@@ -80,13 +82,16 @@ module.exports = {
   },
 
   filters: {
-    'src/component/**/*': 'features.component',
-    'src/directive/**/*': 'features.directive',
-    'src/component/Component.sass': 'componentCss',
-    'src/component/Component.js': `features.component === 'js'`,
-    'src/component/Component.vue': `features.component === 'vue'`,
-    'src/directive/Directive.sass': 'directiveCss',
-    'src/**/*.sass': 'componentCss || directiveCss',
-    'build/script.css.js': 'componentCss || directiveCss'
-  }
+    'ui/src/component/**/*': 'features.component',
+    'ui/src/directive/**/*': 'features.directive',
+    'ui/src/component/Component.sass': 'features.component && componentCss',
+    'ui/src/component/Component.js': `features.component === 'js'`,
+    'ui/src/component/Component.vue': `features.component === 'vue'`,
+    'ui/src/directive/Directive.sass': 'features.directive && directiveCss',
+    'ui/src/**/*.sass': '(features.component && componentCss) || (features.directive && directiveCss)',
+    'build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)'
+  },
+
+  helpers,
+  complete
 }

@@ -1,11 +1,12 @@
 process.env.NODE_ENV = 'production'
 
-const
-  parallel = require('os').cpus().length > 1,
-  { join } = require('path'),
-  { createFolder } = require('./utils'),
-  runJob = parallel ? require('child_process').fork : require,
-  { green, blue } = require('chalk')
+{{#or componentCss directiveCss}}
+const parallel = require('os').cpus().length > 1
+const runJob = parallel ? require('child_process').fork : require
+{{/or}}
+const { join } = require('path')
+const { createFolder } = require('./utils')
+const { green, blue } = require('chalk')
 
 console.log()
 
@@ -15,5 +16,9 @@ console.log(` 📦 Building ${green('v' + require('../package.json').version)}..
 
 createFolder('dist')
 
+{{#or componentCss directiveCss}}
 runJob(join(__dirname, './script.javascript'))
 runJob(join(__dirname, './script.css'))
+{{else}}
+require(join(__dirname, './script.javascript')
+{{/or}}
