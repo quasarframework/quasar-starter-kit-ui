@@ -12,6 +12,6 @@ export default {
   MyComponent,
 
   install (Vue) {
-    Vue.component('MyComponent', MyComponent)
+    Vue.component(MyComponent.name, MyComponent)
   }
 }
