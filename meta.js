@@ -74,8 +74,8 @@ module.exports = {
     directiveCss: {
       type: 'confirm',
       when: 'features.directive',
-      message: 'Do you need a stylesheet for your directive?',
-      default: true
+      message: 'Does your directive require a stylesheet?',
+      default: false
     },
 
     aeDescription: {
