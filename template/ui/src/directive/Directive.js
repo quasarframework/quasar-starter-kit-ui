@@ -1,5 +1,5 @@
 export default {
-  name: '{{name}}',
+  name: '{{directiveName}}',
 
   bind (el) {
     //

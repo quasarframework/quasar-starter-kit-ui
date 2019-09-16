@@ -54,21 +54,3 @@ module.exports.logError = function (err) {
   console.error('\n' + red('[Error]'), err)
   console.log()
 }
-
-module.exports.rollupQuasarUMD = function (config = {}) {
-  return {
-    name: 'quasar-umd',
-    transform (code, id) {
-      return {
-        code: `Quasar.${config.type}.set(${code.replace('export default ', '')})`
-      }
-    }
-  }
-}
-
-module.exports.kebabCase = function (str) {
-  return str.replace(
-    kebabRegex,
-    match => '-' + match.toLowerCase()
-  ).substring(1)
-}

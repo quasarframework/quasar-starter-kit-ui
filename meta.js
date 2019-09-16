@@ -5,26 +5,19 @@ module.exports = {
     name: {
       type: 'string',
       required: true,
-      message: 'Project name (npm name)',
-    },
-
-    productName: {
-      type: 'string',
-      required: true,
-      message: 'Project product name',
-      default: 'MyComponent'
-    },
-
-    description: {
-      type: 'string',
-      required: false,
-      message: 'Project description',
-      default: 'A Quasar Framework app',
+      message: 'Project name (npm name, kebab-case)',
     },
 
     author: {
       type: 'string',
       message: 'Author',
+      required: true
+    },
+
+    license: {
+      type: 'string',
+      message: 'License type',
+      default: 'MIT'
     },
 
     features: {
@@ -48,6 +41,21 @@ module.exports = {
       ]
     },
 
+    packageDescription: {
+      type: 'string',
+      required: true,
+      message: 'Package description',
+      default: 'My awesome component',
+    },
+
+    componentName: {
+      type: 'string',
+      when: 'features.component',
+      required: true,
+      message: 'Component name (camel-case)',
+      default: 'MyComponent'
+    },
+
     componentCss: {
       type: 'confirm',
       when: 'features.component',
@@ -55,11 +63,45 @@ module.exports = {
       default: true
     },
 
+    directiveName: {
+      type: 'string',
+      when: 'features.directive',
+      required: true,
+      message: 'Directive name (kebab-case, without "v-" prefix)',
+      default: 'my-directive'
+    },
+
     directiveCss: {
       type: 'confirm',
       when: 'features.directive',
       message: 'Do you need a stylesheet for your directive?',
       default: true
+    },
+
+    aeDescription: {
+      type: 'string',
+      when: 'features.ae',
+      required: true,
+      message: 'App Extension description',
+      default: 'A Quasar App Extension',
+    },
+
+    repositoryType: {
+      type: 'string',
+      message: 'Repository type',
+      default: 'git'
+    },
+    repositoryURL: {
+      type: 'string',
+      message: 'Repository URL (eg: https://github.com/quasarframework/quasar)'
+    },
+    homepage: {
+      type: 'string',
+      message: 'Homepage URL'
+    },
+    bugs: {
+      type: 'string',
+      message: 'Issue reporting URL (eg: https://github.com/quasarframework/quasar/issues)'
     }
   },
 

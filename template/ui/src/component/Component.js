@@ -1,13 +1,13 @@
 import { QBadge } from 'quasar'
 
 export default {
-  name: '{{productName}}',
+  name: '{{componentName}}',
 
   render (h) {
     return h(QBadge, {
-      staticClass: '{{name}}',
+      staticClass: '{{componentName}}',
       props: {
-        label: '{{productName}}'
+        label: '{{componentName}}'
       }
     })
   }

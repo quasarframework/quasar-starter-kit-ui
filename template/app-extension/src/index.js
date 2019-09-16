@@ -7,26 +7,23 @@
  */
 
 function extendConf (conf) {
-  // make sure my-component boot file is registered
+  // register our boot file
   conf.boot.push('~quasar-app-extension-{{name}}/src/boot/register.js')
 
-  // make sure boot & component files get transpiled
+  // make sure app extension files get transpiled
   conf.build.transpileDependencies.push(/quasar-app-extension-{{name}}[\\/]src/)
 
-  // make sure my-component css goes through webpack to avoid ssr issues
+  // make sure the stylesheet goes through webpack to avoid SSR issues
   conf.css.push('~quasar-app-extension-{{name}}/ui/src/index.sass')
 }
 
 module.exports = function (api) {
-  // (Optional!)
   // Quasar compatibility check; you may need
   // hard dependencies, as in a minimum version of the "quasar"
   // package or a minimum version of "@quasar/app" CLI
   api.compatibleWith('quasar', '^1.1.1')
   api.compatibleWith('@quasar/app', '^1.1.0')
 
-  // Here we extend /quasar.conf.js, so we can add
-  // a boot file which registers our new UI component;
-  // "extendConf" will be defined below (keep reading the tutorial)
+  // We extend /quasar.conf.js
   api.extendQuasarConf(extendConf)
 }

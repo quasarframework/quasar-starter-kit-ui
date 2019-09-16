@@ -1,8 +1,9 @@
 {
   "name": "{{name}}",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "{{author}}",
-  "license": "MIT",
+  "description": "{{packageDescription}}",
+  "license": "{{license}}",
   "module": "dist/index.esm.js",
   "main": "dist/quasar.common.js",
   "scripts": {
@@ -10,6 +11,12 @@
     "build:js": "node build/script.javascript.js"{{#or componentCss directiveCss}},
     "build:css": "node build/script.css.js"{{/or}}
   },
+  "repository": {
+    "type": "{{repositoryType}}",
+    "url": "{{repositoryURL}}"
+  },
+  "bugs": "{{bugs}}",
+  "homepage": "{{homepage}}",
   "devDependencies": {
     {{#or componentCss directiveCss}}
     "autoprefixer": "^9.6.1",

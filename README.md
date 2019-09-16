@@ -4,7 +4,7 @@
 # WORk IN PROGRESS!!!!
 
 # Quasar Framework UI Template
-> Starter Kit for a building a UI component.
+> Starter Kit for building a UI component.
 
 ## Usage
 
