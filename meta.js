@@ -29,19 +29,19 @@ module.exports = {
 
     features: {
       type: 'checkbox',
-      message: 'Pick the features that you want:',
+      message: 'Pick what you want to build:',
       choices: [
         {
-          name: 'A component',
+          name: 'Vue component',
           value: 'component',
           checked: true
         },
         {
-          name: 'A directive',
+          name: 'Vue directive',
           value: 'directive'
         },
         {
-          name: 'A Quasar App Extension',
+          name: 'Quasar App Extension',
           value: 'ae',
           checked: true
         }
@@ -53,24 +53,6 @@ module.exports = {
       when: 'features.component',
       message: 'Do you need a stylesheet for your component?',
       default: true
-    },
-
-    componentForm: {
-      type: 'list',
-      when: 'features.component',
-      message: 'Pick component form:',
-      default: 'vue',
-      choices: [
-        {
-          name: '.vue file',
-          value: 'vue',
-          checked: true
-        },
-        {
-          name: '.js file (render function)',
-          value: 'js'
-        }
-      ]
     },
 
     directiveCss: {
@@ -85,8 +67,6 @@ module.exports = {
     'ui/src/component/**/*': 'features.component',
     'ui/src/directive/**/*': 'features.directive',
     'ui/src/component/Component.sass': 'features.component && componentCss',
-    'ui/src/component/Component.js': `features.component === 'js'`,
-    'ui/src/component/Component.vue': `features.component === 'vue'`,
     'ui/src/directive/Directive.sass': 'features.directive && directiveCss',
     'ui/src/**/*.sass': '(features.component && componentCss) || (features.directive && directiveCss)',
     'build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)'

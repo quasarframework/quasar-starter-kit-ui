@@ -12,7 +12,7 @@ console.log()
 
 require('./script.clean.js')
 
-console.log(` 📦 Building ${green('v' + require('../package.json').version)}...${parallel ? blue(' [multi-threaded]') : ''}\n`)
+console.log(` 📦 Building ${green('v' + require('../package.json').version)}...{{#or componentCss directiveCss}}${parallel ? blue(' [multi-threaded]') : ''}{{/or}}\n`)
 
 createFolder('dist')
 

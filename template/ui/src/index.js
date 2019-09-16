@@ -13,7 +13,7 @@ export {
 export default {
   version,
 
-  {{#features.component}}Component{{#features.directive}},{{/features.directive}}{{/features.component}}
+  {{#features.component}}Component,{{/features.component}}
   {{#features.directive}}Directive,{{/features.directive}}
 
   install (Vue) {

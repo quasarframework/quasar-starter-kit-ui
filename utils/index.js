@@ -10,7 +10,7 @@ const
 function sortDependencies(data) {
   const pkgFile = path.join(
     data.inPlace ? '' : data.destDirName,
-    'package.json'
+    'ui/package.json'
   )
   let sorted = false
   const pkg = JSON.parse(fs.readFileSync(pkgFile))
@@ -51,9 +51,7 @@ function printMessage(data, { green, yellow }) {
 To get started:
 
   ${yellow(
-    `${data.inPlace ? '' : `cd ${data.destDirName}\n  `}${installMsg(
-      data
-    )}${lintMsg(data)}quasar dev`
+    data.inPlace ? '' : `cd ${data.destDirName}\n`
   )}
 
 Documentation can be found at: https://quasar.dev
