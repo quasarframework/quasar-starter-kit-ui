@@ -69,13 +69,32 @@ If you need the RTL variant of the CSS, then go for the following (instead of th
 
 # Setup
 ```bash
-$ cd ui
 $ yarn
+```
+
+# Developing
+```bash
+# start dev in SPA mode
+$ yarn dev
+
+# start dev in UMD mode
+$ yarn dev:umd
+
+# start dev in SSR mode
+$ yarn dev:ssr
+
+# start dev in Cordova iOS mode
+$ yarn dev:ios
+
+# start dev in Cordova Android mode
+$ yarn dev:android
+
+# start dev in Electron mode
+$ yarn dev:electron
 ```
 
 # Building package
 ```bash
-$ cd ui
 $ yarn build
 ```
 

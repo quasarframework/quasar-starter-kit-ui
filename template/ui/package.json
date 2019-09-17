@@ -8,8 +8,8 @@
   "main": "dist/quasar.common.js",
   "scripts": {
     "dev": "cd dev; quasar dev; cd ..",
-    "dev:ios": "todo; cd dev; quasar dev -m ios; cd ..",
-    "dev:android": "todo; cd dev; quasar dev -m android; cd ..",
+    "dev:ios": "cd dev; quasar dev -m ios; cd ..",
+    "dev:android": "cd dev; quasar dev -m android; cd ..",
     "dev:umd": "todo",
     "dev:ssr": "todo; cd dev; quasar dev -m ssr; cd ..",
     "dev:electron": "todo; cd dev; quasar dev -m electron; cd ..",
