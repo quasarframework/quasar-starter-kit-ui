@@ -5,7 +5,7 @@ module.exports = {
     name: {
       type: 'string',
       required: true,
-      message: 'Project name (npm name, kebab-case)',
+      message: 'Project name (npm name, kebab-case)'
     },
 
     author: {

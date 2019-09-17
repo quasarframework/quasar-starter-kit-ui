@@ -13,6 +13,9 @@
 {{/features.directive}}
 
 # Usage
+
+## Quasar CLI project
+
 ```js
 import Vue from 'vue'
 import Plugin from '{{name}}'
@@ -40,6 +43,29 @@ export default {
 }
 </script>
 ```
+
+## UMD variant
+
+Add the following tag(s) after the Quasar ones:
+
+```html
+{{#or componentCss directiveCss}}
+<head>
+  <!-- AFTER the Quasar stylesheet tags: -->
+  <link href="https://cdn.jsdelivr.net/npm/{{name}}@latest/dist/index.min.css" rel="stylesheet" type="text/css">
+</head>
+{{/or}}
+<body>
+  <!-- at end of body, AFTER Quasar script(s): -->
+  <script src="https://cdn.jsdelivr.net/npm/{{name}}@latest/dist/index.umd.min.js"></script>
+</body>
+```
+{{#or componentCss directiveCss}}
+If you need the RTL variant of the CSS, then go for the following (instead of the above stylesheet link):
+```html
+<link href="https://cdn.jsdelivr.net/npm/{{name}}@latest/dist/index.rtl.min.css" rel="stylesheet" type="text/css">
+```
+{{/or}}
 
 # Setup
 ```bash
