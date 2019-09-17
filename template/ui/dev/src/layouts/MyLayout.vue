@@ -1,0 +1,37 @@
+<template>
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated>
+      <q-toolbar>
+        <q-btn
+          flat
+          dense
+          round
+          to="/"
+          icon="home"
+        />
+
+        <q-toolbar-title>
+          comp v\{{ version }}
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
+</template>
+
+<script>
+import { version } from 'ui' // "ui" is aliased in quasar.conf.js
+
+export default {
+  name: 'MyLayout',
+
+  data () {
+    return {
+      version
+    }
+  }
+}
+</script>

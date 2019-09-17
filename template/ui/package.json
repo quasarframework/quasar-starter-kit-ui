@@ -7,6 +7,12 @@
   "module": "dist/index.esm.js",
   "main": "dist/quasar.common.js",
   "scripts": {
+    "dev": "cd dev; quasar dev; cd ..",
+    "dev:ios": "todo; cd dev; quasar dev -m ios; cd ..",
+    "dev:android": "todo; cd dev; quasar dev -m android; cd ..",
+    "dev:umd": "todo",
+    "dev:ssr": "todo; cd dev; quasar dev -m ssr; cd ..",
+    "dev:electron": "todo; cd dev; quasar dev -m electron; cd ..",
     "build": "node build/index.js",
     "build:js": "node build/script.javascript.js"{{#or componentCss directiveCss}},
     "build:css": "node build/script.css.js"{{/or}}
@@ -25,6 +31,9 @@
     "postcss-rtl": "^1.5.0",
     "sass-node": "^4.11.2",
     {{/or}}
+    "@quasar/extras": "^1.0.0",
+    "@quasar/app": "^1.0.0",
+    "quasar": "^1.0.0",
     "chalk": "^2.4.2",
     "rimraf": "^3.0.0",
     "rollup": "^1.21.3",
@@ -33,5 +42,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "uglify-es": "^3.3.9",
     "zlib": "^1.0.5"
-  }
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
 }
