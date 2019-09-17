@@ -2,9 +2,9 @@
 <img src="https://img.shields.io/npm/v/quasar-app-extension-{{name}}.svg?label=quasar-app-extension-{{name}}">
 
 # Structure
-* /ui - standalone npm package
+* [/ui](ui) - standalone npm package
 {{#features.ae}}
-* /app-extension - Quasar app extension
+* [/app-extension](app-extension) - Quasar app extension
 {{/features.ae}}
 
 # License
