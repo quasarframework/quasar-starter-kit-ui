@@ -8,11 +8,11 @@
   "main": "dist/quasar.common.js",
   "scripts": {
     "dev": "cd dev; quasar dev; cd ..",
+    "dev:umd": "todo",
+    "dev:ssr": "cd dev; quasar dev -m ssr; cd ..",
     "dev:ios": "cd dev; quasar dev -m ios; cd ..",
     "dev:android": "cd dev; quasar dev -m android; cd ..",
-    "dev:umd": "todo",
-    "dev:ssr": "todo; cd dev; quasar dev -m ssr; cd ..",
-    "dev:electron": "todo; cd dev; quasar dev -m electron; cd ..",
+    "dev:electron": "cd dev; quasar dev -m electron; cd ..",
     "build": "node build/index.js",
     "build:js": "node build/script.javascript.js"{{#or componentCss directiveCss}},
     "build:css": "node build/script.css.js"{{/or}}
@@ -31,8 +31,6 @@
     "postcss-rtl": "^1.5.0",
     "sass-node": "^4.11.2",
     {{/or}}
-    "@quasar/extras": "^1.0.0",
-    "@quasar/app": "^1.0.0",
     "quasar": "^1.0.0",
     "chalk": "^2.4.2",
     "rimraf": "^3.0.0",

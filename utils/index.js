@@ -1,6 +1,7 @@
 const
   path = require('path'),
-  fs = require('fs')
+  fs = require('fs'),
+  spawn = require('child_process').spawn
 
 /**
  * Sorts dependencies in package.json alphabetically.
@@ -41,6 +42,62 @@ function sortObject(object) {
 }
 
 /**
+ * Runs `npm install` in the project directory
+ * @param {string} cwd Path of the created project directory
+ * @param {object} data Data from questionnaire
+ */
+function installDependencies(cwd, executable = 'npm', color) {
+  console.log(`\n\n ${color('[*] Installing project dependencies ...')}\n`)
+  return runCommand(executable, ['install'], { cwd })
+}
+
+/**
+ * If the user will have to run `npm install` or `yarn` themselves, it returns a string
+ * containing the instruction for this step.
+ * @param {Object} data Data from the questionnaire
+ */
+function installMsg(data) {
+  return !data.autoInstall ? '  Run "yarn" (or if using npm: "npm install") into /ui and /ui/dev\n  ' : ''
+}
+
+/**
+ * Spawns a child process and runs the specified command
+ * By default, runs in the CWD and inherits stdio
+ * Options are the same as node's child_process.spawn
+ * @param {string} cmd
+ * @param {array<string>} args
+ * @param {object} options
+ */
+function runCommand(cmd, args, options) {
+  return new Promise((resolve, reject) => {
+    const spwan = spawn(
+      cmd,
+      args,
+      Object.assign(
+        {
+          cwd: process.cwd(),
+          stdio: 'inherit',
+          shell: true,
+        },
+        options
+      )
+    )
+
+    spwan.on('exit', code => {
+      if (code) {
+        console.log()
+        console.log(` ${cmd} install FAILED... Possible temporary npm registry issues?`)
+        console.log(` Please try again later...`)
+        console.log()
+        process.exit(1)
+      }
+
+      resolve()
+    })
+  })
+}
+
+/**
  * Prints the final message with instructions of necessary next steps.
  * @param {Object} data Data from questionnaire.
  */
@@ -51,7 +108,8 @@ function printMessage(data, { green, yellow }) {
 To get started:
 
   ${yellow(
-    data.inPlace ? '' : `cd ${data.destDirName}\n`
+    `${data.inPlace ? '' : `cd ${data.destDirName}`}\n` +
+    `${installMsg(data)}`
   )}
 
 Documentation can be found at: https://quasar.dev
@@ -92,5 +150,20 @@ exports.complete = function (data, { chalk }) {
   const green = chalk.green
 
   sortDependencies(data, green)
-  printMessage(data, chalk)
+
+  const cwd = path.join(process.cwd(), data.inPlace ? '' : data.destDirName, 'ui')
+
+  if (data.autoInstall) {
+    installDependencies(cwd, data.autoInstall, green)
+      .then(() => installDependencies(path.join(cwd, 'dev'), data.autoInstall, green))
+      .then(() => {
+        printMessage(data, green)
+      })
+      .catch(e => {
+        console.log(chalk.red('Error:'), e)
+      })
+  }
+  else {
+    printMessage(data, chalk)
+  }
 }

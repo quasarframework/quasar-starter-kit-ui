@@ -27,15 +27,18 @@ module.exports = {
         {
           name: 'Vue component',
           value: 'component',
+          short: 'Component',
           checked: true
         },
         {
           name: 'Vue directive',
-          value: 'directive'
+          value: 'directive',
+          short: 'Directive'
         },
         {
           name: 'Quasar App Extension',
           value: 'ae',
+          short: 'AE',
           checked: true
         }
       ]
@@ -102,6 +105,29 @@ module.exports = {
     bugs: {
       type: 'string',
       message: 'Issue reporting URL (eg: https://github.com/quasarframework/quasar/issues)'
+    },
+
+    autoInstall: {
+      type: 'list',
+      message:
+        'Should we run `npm install` for you after the project has been created? (recommended)',
+      choices: [
+        {
+          name: 'Yes, use Yarn (recommended)',
+          value: 'yarn',
+          short: 'yarn',
+        },
+        {
+          name: 'Yes, use NPM',
+          value: 'npm',
+          short: 'NPM',
+        },
+        {
+          name: 'No, I will handle that myself',
+          value: false,
+          short: 'no',
+        }
+      ]
     }
   },
 
