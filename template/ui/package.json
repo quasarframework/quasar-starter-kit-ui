@@ -8,7 +8,7 @@
   "main": "dist/quasar.common.js",
   "scripts": {
     "dev": "cd dev; quasar dev; cd ..",
-    "dev:umd": "todo",
+    "dev:umd": "yarn build && node build/script.open-umd.js",
     "dev:ssr": "cd dev; quasar dev -m ssr; cd ..",
     "dev:ios": "cd dev; quasar dev -m ios; cd ..",
     "dev:android": "cd dev; quasar dev -m android; cd ..",
@@ -32,6 +32,7 @@
     "sass-node": "^4.11.2",
     {{/or}}
     "quasar": "^1.0.0",
+    "open": "^6.4.0",
     "chalk": "^2.4.2",
     "rimraf": "^3.0.0",
     "rollup": "^1.21.3",

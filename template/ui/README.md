@@ -46,6 +46,8 @@ export default {
 
 ## UMD variant
 
+Exports `window.{{umdExportName}}`.
+
 Add the following tag(s) after the Quasar ones:
 
 ```html

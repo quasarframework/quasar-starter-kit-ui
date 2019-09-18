@@ -4,14 +4,14 @@ module.exports = {
   prompts: {
     name: {
       type: 'string',
-      required: true,
-      message: 'Project name (npm name, kebab-case)'
+      message: 'Project name (npm name, kebab-case)',
+      validate: val => val && val.length > 0
     },
 
     author: {
       type: 'string',
       message: 'Author',
-      required: true
+      validate: val => val && val.length > 0
     },
 
     license: {
@@ -46,17 +46,22 @@ module.exports = {
 
     packageDescription: {
       type: 'string',
-      required: true,
       message: 'Package description',
       default: 'My awesome component',
+    },
+
+    umdExportName: {
+      type: 'string',
+      message: 'UMD export name (global variable, camel-cased)',
+      validate: val => val && val.length > 0
     },
 
     componentName: {
       type: 'string',
       when: 'features.component',
-      required: true,
       message: 'Component name (camel-case)',
-      default: 'MyComponent'
+      default: 'MyComponent',
+      validate: val => val && val.length > 0
     },
 
     componentCss: {
@@ -69,9 +74,9 @@ module.exports = {
     directiveName: {
       type: 'string',
       when: 'features.directive',
-      required: true,
       message: 'Directive name (kebab-case, without "v-" prefix)',
-      default: 'my-directive'
+      default: 'my-directive',
+      validate: val => val && val.length > 0
     },
 
     directiveCss: {
@@ -87,6 +92,7 @@ module.exports = {
       required: true,
       message: 'App Extension description',
       default: 'A Quasar App Extension',
+      validate: val => val && val.length > 0
     },
 
     repositoryType: {

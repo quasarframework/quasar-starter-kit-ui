@@ -11,8 +11,10 @@
         />
 
         <q-toolbar-title>
-          comp v\{{ version }}
+          {{name}} v\{{ version }}
         </q-toolbar-title>
+
+        <div>Quasar v\{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
