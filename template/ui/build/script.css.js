@@ -44,7 +44,7 @@ function generate (src, dest) {
   dest = resolve(dest)
 
   return new Promise((resolve, reject) => {
-    sass.render({ file: src }, (err, result) => {
+    sass.render({ file: src, includePaths: ['node_modules'] }, (err, result) => {
       if (err) {
         reject(err)
         return
