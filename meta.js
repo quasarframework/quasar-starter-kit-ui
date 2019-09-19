@@ -138,6 +138,7 @@ module.exports = {
   },
 
   filters: {
+    'app-extension/**/*': 'features.ae',
     'ui/src/component/**/*': 'features.component',
     'ui/src/directive/**/*': 'features.directive',
     'ui/src/component/Component.sass': 'features.component && componentCss',
