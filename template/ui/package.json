@@ -7,12 +7,12 @@
   "module": "dist/index.esm.js",
   "main": "dist/quasar.common.js",
   "scripts": {
-    "dev": "cd dev; quasar dev; cd ..",
+    "dev": "cd dev; yarn dev; cd ..",
     "dev:umd": "yarn build && node build/script.open-umd.js",
-    "dev:ssr": "cd dev; quasar dev -m ssr; cd ..",
-    "dev:ios": "cd dev; quasar dev -m ios; cd ..",
-    "dev:android": "cd dev; quasar dev -m android; cd ..",
-    "dev:electron": "cd dev; quasar dev -m electron; cd ..",
+    "dev:ssr": "cd dev; yarn 'dev:ssr'; cd ..",
+    "dev:ios": "cd dev; yarn 'dev:ios'; cd ..",
+    "dev:android": "cd dev; yarn 'dev:android'; cd ..",
+    "dev:electron": "cd dev; yarn 'dev:electron'; cd ..",
     "build": "node build/index.js",
     "build:js": "node build/script.javascript.js"{{#or componentCss directiveCss}},
     "build:css": "node build/script.css.js"{{/or}}
