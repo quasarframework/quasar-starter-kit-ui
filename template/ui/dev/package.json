@@ -5,6 +5,13 @@
   "productName": "Quasar App",
   "cordovaId": "org.cordova.quasar.app",
   "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "dev:ssr": "quasar dev -m ssr",
+    "dev:ios": "quasar dev -m ios",
+    "dev:android": "quasar dev -m android",
+    "dev:electron": "quasar dev -m electron"
+  },
   "dependencies": {
     "@quasar/extras": "^1.3.1",
     "quasar": "^1.1.2"
