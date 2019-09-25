@@ -7,7 +7,7 @@ export {
   version,
 
   {{#features.component}}Component{{#features.directive}},{{/features.directive}}{{/features.component}}
-  {{#features.directive}}Directive,{{/features.directive}}
+  {{#features.directive}}Directive{{/features.directive}}
 }
 
 export default {
