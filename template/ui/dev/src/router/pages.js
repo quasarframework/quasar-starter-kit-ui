@@ -9,6 +9,10 @@ function kebabCase (str) {
   ).substring(1)
 }
 
+function slugify (str) {
+  return encodeURIComponent(String(str).trim().replace(/\s+/g, '-'))
+}
+
 export default require.context('../pages', true, /^\.\/.*\.vue$/)
   .keys()
   .map(page => page.slice(2).replace('.vue', ''))
@@ -16,5 +20,5 @@ export default require.context('../pages', true, /^\.\/.*\.vue$/)
   .map(page => ({
     file: page,
     title: page + '.vue',
-    path: kebabCase(page)
+    path: slugify(kebabCase(page))
   }))
