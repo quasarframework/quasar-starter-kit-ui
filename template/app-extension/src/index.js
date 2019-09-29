@@ -14,7 +14,7 @@ function extendConf (conf) {
   conf.build.transpileDependencies.push(/quasar-app-extension-{{name}}[\\/]src/)
 
   // make sure the stylesheet goes through webpack to avoid SSR issues
-  conf.css.push('~{{name}}/ui/src/index.sass')
+  conf.css.push('~{{name}}/src/index.sass')
 }
 
 module.exports = function (api) {
