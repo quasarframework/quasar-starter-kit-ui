@@ -15,17 +15,63 @@
 # Usage
 
 ## Quasar CLI project
+{{#features.ae}}
+
+Install the [App Extension](../app-extension).
+
+**OR**:
+
+{{/features.ae}}
+Create and register a boot file:
 
 ```js
 import Vue from 'vue'
-import Plugin from '{{name}}'
+import Plugin from '{{name}}'{{#or componentCss directiveCss}}
+import '{{name}}/dist/index.css'{{/or}}
 
 Vue.use(Plugin)
 ```
 
-or:
+**OR**:
 
 ```js
+{{#or componentCss directiveCss}}<style src="{{name}}/dist/index.css"></style>
+
+{{/or}}
+<script>
+import { {{#features.component}}Component{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from '{{name}}'
+
+export default {
+  {{#features.component}}
+  components: {
+    Component
+  }{{#features.directive}},{{/features.directive}}
+  {{/features.component}}
+  {{#features.directive}}
+  directives: {
+    Directive
+  }
+  {{/features.directive}}
+}
+</script>
+```
+
+## Vue CLI project
+
+```js
+import Vue from 'vue'
+import Plugin from '{{name}}'{{#or componentCss directiveCss}}
+import '{{name}}/dist/index.css'{{/or}}
+
+Vue.use(Plugin)
+```
+
+**OR**:
+
+```js
+{{#or componentCss directiveCss}}<style src="{{name}}/dist/index.css"></style>
+
+{{/or}}
 <script>
 import { {{#features.component}}Component{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from '{{name}}'
 
