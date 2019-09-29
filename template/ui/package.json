@@ -5,7 +5,7 @@
   "description": "{{packageDescription}}",
   "license": "{{license}}",
   "module": "dist/index.esm.js",
-  "main": "dist/quasar.common.js",
+  "main": "dist/index.common.js",
   "scripts": {
     "dev": "cd dev; yarn dev; cd ..",
     "dev:umd": "yarn build && node build/script.open-umd.js",
