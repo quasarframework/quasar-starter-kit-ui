@@ -24,14 +24,13 @@ module.exports = function (api) {
   api.compatibleWith('quasar', '^1.1.1')
   api.compatibleWith('@quasar/app', '^1.1.0')
 
-  {{#features.component}}
+{{#features.component}}
   // Uncomment the line below if you provide a JSON API for your component
   // api.registerDescribeApi('{{componentName}}', '~{{name}}/src/component/{{componentName}}.json')
-  {{/#features.component}}
-  {{#features.directive}}
+{{/features.component}}{{#features.directive}}
   // Uncomment the line below if you provide a JSON API for your directive
   // api.registerDescribeApi('{{directiveName}}', '~{{name}}/src/directive/{{directiveName}}.json')
-  {{/#features.directive}}
+{{/features.directive}}
 
   // We extend /quasar.conf.js
   api.extendQuasarConf(extendConf)
