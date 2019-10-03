@@ -1,5 +1,5 @@
 {
-  "name": "{{name}}",
+  "name": "quasar-ui-{{name}}",
   "version": "0.0.1",
   "author": "{{author}}",
   "description": "{{packageDescription}}",
