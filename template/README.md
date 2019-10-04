@@ -7,8 +7,8 @@
 * [/app-extension](app-extension) - Quasar app extension
 {{/features.ae}}
 
-# License
-{{license}}
-
 # Donate
 If you appreciate the work that went into this App Extension, please consider [donating to Quasar](https://donate.quasar.dev).
+
+# License
+{{license}} (c) {{author}}
