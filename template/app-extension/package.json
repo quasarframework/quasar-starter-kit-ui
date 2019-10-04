@@ -12,7 +12,7 @@
   "bugs": "{{bugs}}",
   "homepage": "{{homepage}}",
   "dependencies": {
-    "{{name}}": "latest"
+    "quasar-ui-{{name}}": "latest"
   },
   "engines": {
     "node": ">= 8.9.0",
