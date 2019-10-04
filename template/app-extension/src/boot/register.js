@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import VuePlugin from '{{name}}'
+import VuePlugin from 'quasar-ui-{{name}}'
 
 Vue.use(VuePlugin)
