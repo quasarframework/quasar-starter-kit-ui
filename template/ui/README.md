@@ -1,6 +1,7 @@
 # {{#features.component}}Component {{componentName}}{{#features.directive}} and {{/features.directive}}{{/features.component}}{{#features.directive}}Directive v-{{directiveName}}{{/features.directive}}
 
-<img src="https://img.shields.io/npm/v/quasar-ui-{{name}}.svg?label=quasar-ui-{{name}}">
+[![npm](https://img.shields.io/npm/v/quasar-ui-{{name}}.svg?label=quasar-ui-{{name}})](https://www.npmjs.com/package/quasar-ui-{{name}})
+[![npm](https://img.shields.io/npm/dt/quasar-ui-{{name}}.svg)](https://www.npmjs.com/package/quasar-ui-{{name}})
 
 {{#features.component}}
 # Component {{componentName}}
