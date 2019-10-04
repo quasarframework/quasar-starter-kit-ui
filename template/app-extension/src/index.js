@@ -14,7 +14,7 @@ function extendConf (conf) {
   conf.build.transpileDependencies.push(/quasar-app-extension-{{name}}[\\/]src/)
 
   // make sure the stylesheet goes through webpack to avoid SSR issues
-  conf.css.push('~{{name}}/src/index.sass')
+  conf.css.push('~quasar-ui-{{name}}/src/index.sass')
 }
 
 module.exports = function (api) {
@@ -26,10 +26,10 @@ module.exports = function (api) {
 
 {{#features.component}}
   // Uncomment the line below if you provide a JSON API for your component
-  // api.registerDescribeApi('{{componentName}}', '~{{name}}/src/component/{{componentName}}.json')
+  // api.registerDescribeApi('{{componentName}}', '~quasar-ui-{{name}}/src/component/{{componentName}}.json')
 {{/features.component}}{{#features.directive}}
   // Uncomment the line below if you provide a JSON API for your directive
-  // api.registerDescribeApi('{{directiveName}}', '~{{name}}/src/directive/{{directiveName}}.json')
+  // api.registerDescribeApi('{{directiveName}}', '~quasar-ui-{{name}}/src/directive/{{directiveName}}.json')
 {{/features.directive}}
 
   // We extend /quasar.conf.js
