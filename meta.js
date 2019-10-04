@@ -4,7 +4,7 @@ module.exports = {
   prompts: {
     name: {
       type: 'string',
-      message: 'Project name (npm name, kebab-case)',
+      message: 'Project name (npm name, kebab-case, without "quasar-ui" prefix)',
       validate: val => val && val.length > 0
     },
 

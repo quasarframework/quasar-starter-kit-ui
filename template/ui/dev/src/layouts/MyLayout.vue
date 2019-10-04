@@ -11,7 +11,7 @@
         />
 
         <q-toolbar-title>
-          {{name}} v\{{ version }}
+          quasar-ui-{{name}} v\{{ version }}
         </q-toolbar-title>
 
         <div>Quasar v\{{ $q.version }}</div>
