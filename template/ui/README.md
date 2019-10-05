@@ -35,17 +35,17 @@ Vue.use(Plugin)
 
 **OR**:
 
-```js
+```html
 {{#or componentCss directiveCss}}<style src="quasar-ui-{{name}}/dist/index.css"></style>
 
 {{/or}}
 <script>
-import { {{#features.component}}Component{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from 'quasar-ui-{{name}}'
+import { {{#features.component}}Component as {{componentName}}{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from 'quasar-ui-{{name}}'
 
 export default {
   {{#features.component}}
   components: {
-    Component
+    {{componentName}}
   }{{#features.directive}},{{/features.directive}}
   {{/features.component}}
   {{#features.directive}}
@@ -69,17 +69,17 @@ Vue.use(Plugin)
 
 **OR**:
 
-```js
+```html
 {{#or componentCss directiveCss}}<style src="quasar-ui-{{name}}/dist/index.css"></style>
 
 {{/or}}
 <script>
-import { {{#features.component}}Component{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from 'quasar-ui-{{name}}'
+import { {{#features.component}}Component as {{componentName}}{{/features.component}}{{#features.directive}}, {{/features.directive}}{{#features.directive}}Directive{{/features.directive}} } from 'quasar-ui-{{name}}'
 
 export default {
   {{#features.component}}
   components: {
-    Component
+    {{componentName}}
   }{{#features.directive}},{{/features.directive}}
   {{/features.component}}
   {{#features.directive}}
