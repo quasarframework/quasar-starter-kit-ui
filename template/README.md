@@ -8,7 +8,7 @@
 {{/features.ae}}
 
 # Donate
-If you appreciate the work that went into this UI Component, please consider [donating to Quasar](https://donate.quasar.dev).
+If you appreciate the work that went into this project, please consider [donating to Quasar](https://donate.quasar.dev).
 
 # License
 {{license}} (c) {{author}}
