@@ -5,11 +5,13 @@ const buble = require('rollup-plugin-buble')
 const json = require('rollup-plugin-json')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const VuePlugin = require('rollup-plugin-vue')
+const commonjs = require('rollup-plugin-commonjs')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
 
 const rollupPlugins = [
+  commonjs(),
   nodeResolve({
     extensions: ['.js'],
     preferBuiltins: false
