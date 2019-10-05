@@ -35,7 +35,7 @@ Vue.use(Plugin)
 
 **OR**:
 
-```js
+```html
 {{#or componentCss directiveCss}}<style src="quasar-ui-{{name}}/dist/index.css"></style>
 
 {{/or}}
@@ -69,7 +69,7 @@ Vue.use(Plugin)
 
 **OR**:
 
-```js
+```html
 {{#or componentCss directiveCss}}<style src="quasar-ui-{{name}}/dist/index.css"></style>
 
 {{/or}}
