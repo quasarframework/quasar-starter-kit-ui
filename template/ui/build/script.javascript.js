@@ -4,6 +4,7 @@ const uglify = require('uglify-es')
 const buble = require('rollup-plugin-buble')
 const json = require('rollup-plugin-json')
 const nodeResolve = require('rollup-plugin-node-resolve')
+const VuePlugin = require('rollup-plugin-vue')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
@@ -13,6 +14,7 @@ const rollupPlugins = [
     extensions: ['.js'],
     preferBuiltins: false
   }),
+  VuePlugin(),
   json(),
   buble({
     objectAssign: 'Object.assign'
