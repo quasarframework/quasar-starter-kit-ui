@@ -20,5 +20,5 @@ createFolder('dist')
 runJob(join(__dirname, './script.javascript'))
 runJob(join(__dirname, './script.css'))
 {{else}}
-require(join(__dirname, './script.javascript')
+require(join(__dirname, './script.javascript'))
 {{/or}}
