@@ -52,14 +52,14 @@ module.exports = {
 
     umdExportName: {
       type: 'string',
-      message: 'UMD export name (global variable, camel-cased)',
+      message: 'UMD export name (global variable, camelCased)',
       validate: val => val && val.length > 0
     },
 
     componentName: {
       type: 'string',
       when: 'features.component',
-      message: 'Component name (camel-case)',
+      message: 'Component name (PascalCase)',
       default: 'MyComponent',
       validate: val => val && val.length > 0
     },
