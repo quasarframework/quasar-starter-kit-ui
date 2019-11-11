@@ -139,10 +139,10 @@ module.exports = {
 
   filters: {
     'app-extension/**/*': 'features.ae',
-    'ui/src/component/**/*': 'features.component',
-    'ui/src/directive/**/*': 'features.directive',
-    'ui/src/component/Component.sass': 'features.component && componentCss',
-    'ui/src/directive/Directive.sass': 'features.directive && directiveCss',
+    'ui/src/components/**/*': 'features.component',
+    'ui/src/directives/**/*': 'features.directive',
+    'ui/src/components/Component.sass': 'features.component && componentCss',
+    'ui/src/directives/Directive.sass': 'features.directive && directiveCss',
     'ui/src/**/*.sass': '(features.component && componentCss) || (features.directive && directiveCss)',
     'build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)'
   },
