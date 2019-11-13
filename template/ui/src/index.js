@@ -1,7 +1,7 @@
 import { version } from '../package.json'
 
-{{#features.component}}import Component from './component/Component'{{/features.component}}
-{{#features.directive}}import Directive from './directive/Directive'{{/features.directive}}
+{{#features.component}}import Component from './components/Component'{{/features.component}}
+{{#features.directive}}import Directive from './directives/Directive'{{/features.directive}}
 
 export {
   version,

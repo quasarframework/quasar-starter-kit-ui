@@ -28,10 +28,10 @@ module.exports = function (api) {
 
 {{#features.component}}
   // Uncomment the line below if you provide a JSON API for your component
-  // api.registerDescribeApi('{{componentName}}', '~quasar-ui-{{name}}/src/component/{{componentName}}.json')
+  // api.registerDescribeApi('{{componentName}}', '~quasar-ui-{{name}}/src/components/{{componentName}}.json')
 {{/features.component}}{{#features.directive}}
   // Uncomment the line below if you provide a JSON API for your directive
-  // api.registerDescribeApi('{{directiveName}}', '~quasar-ui-{{name}}/src/directive/{{directiveName}}.json')
+  // api.registerDescribeApi('{{directiveName}}', '~quasar-ui-{{name}}/src/directives/{{directiveName}}.json')
 {{/features.directive}}
 
   // We extend /quasar.conf.js
