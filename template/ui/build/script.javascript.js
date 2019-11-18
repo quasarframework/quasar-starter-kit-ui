@@ -1,4 +1,6 @@
 const path = require('path')
+const fs = require('fs')
+const fse = require('fs-extra')
 const rollup = require('rollup')
 const uglify = require('uglify-es')
 const buble = require('rollup-plugin-buble')
