@@ -1,8 +1,6 @@
 
 ![Quasar Framework logo](https://cdn.quasar.dev/logo/svg/quasar-logo-full-inline.svg)
 
-# WORk IN PROGRESS!!!!
-
 # Quasar Framework UI Template
 > Starter Kit for building a UI component.
 
