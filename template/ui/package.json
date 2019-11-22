@@ -27,6 +27,7 @@
     {{#or componentCss directiveCss}}
     "autoprefixer": "^9.6.1",
     "cssnano": "^4.1.10",
+    "fs-extra": "^8.1.0",
     "postcss": "^7.0.18",
     "postcss-rtl": "^1.5.0",
     "node-sass": "^4.0.0",
