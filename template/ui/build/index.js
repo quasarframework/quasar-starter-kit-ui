@@ -10,6 +10,7 @@ const { green, blue } = require('chalk')
 
 console.log()
 
+require('./script.app-ext').syncAppExt()
 require('./script.clean.js')
 
 console.log(` 📦 Building ${green('v' + require('../package.json').version)}...{{#or componentCss directiveCss}}${parallel ? blue(' [multi-threaded]') : ''}{{/or}}\n`)
