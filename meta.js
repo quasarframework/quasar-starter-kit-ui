@@ -144,7 +144,8 @@ module.exports = {
     'ui/src/components/Component.sass': 'features.component && componentCss',
     'ui/src/directives/Directive.sass': 'features.directive && directiveCss',
     'ui/src/**/*.sass': '(features.component && componentCss) || (features.directive && directiveCss)',
-    'build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)'
+    'ui/build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)',
+    'ui/build/script.app-ext.js': 'features.ae && (features.component || features.directive)'
   },
 
   helpers,
