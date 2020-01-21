@@ -98,7 +98,7 @@ module.exports = {
     preset: {
       type: 'checkbox',
       when: 'features.ae',
-      message: 'Pick the needed scripts:',
+      message: 'Pick the needed App Extension scripts:',
       choices: [
         {
           name: 'Prompts script',
