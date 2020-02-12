@@ -95,6 +95,26 @@ module.exports = {
       validate: val => val && val.length > 0
     },
 
+    preset: {
+      type: 'checkbox',
+      when: 'features.ae',
+      message: 'Pick the needed App Extension scripts:',
+      choices: [
+        {
+          name: 'Prompts script',
+          value: 'prompts'
+        },
+        {
+          name: 'Install script',
+          value: 'install'
+        },
+        {
+          name: 'Uninstall script',
+          value: 'uninstall'
+        }
+      ]
+    },
+
     repositoryType: {
       type: 'string',
       message: 'Repository type',
@@ -138,6 +158,9 @@ module.exports = {
   },
 
   filters: {
+    'app-extension/src/install.js': 'features.ae && preset.install',
+    'app-extension/src/prompts.js': 'features.ae && preset.prompts',
+    'app-extension/src/uninstall.js': 'features.ae && preset.uninstall',
     'app-extension/**/*': 'features.ae',
     'ui/src/components/**/*': 'features.component',
     'ui/src/directives/**/*': 'features.directive',
