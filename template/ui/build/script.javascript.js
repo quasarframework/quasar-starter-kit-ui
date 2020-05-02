@@ -1,11 +1,13 @@
 const path = require('path')
+const fs = require('fs')
+const fse = require('fs-extra')
 const rollup = require('rollup')
 const uglify = require('uglify-es')
-const buble = require('rollup-plugin-buble')
-const json = require('rollup-plugin-json')
-const nodeResolve = require('rollup-plugin-node-resolve')
+const buble = require('@rollup/plugin-buble')
+const json = require('@rollup/plugin-json')
+const nodeResolve = require('@rollup/plugin-node-resolve')
+const commonjs = require('@rollup/plugin-commonjs')
 const VuePlugin = require('rollup-plugin-vue')
-const commonjs = require('rollup-plugin-commonjs')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
@@ -73,6 +75,10 @@ const builds = [
   }
 ]
 
+// Add your asset folders here
+// addAssets(builds, 'icon-set', 'iconSet')
+// addAssets(builds, 'lang', 'lang')
+
 build(builds)
 
 /**
@@ -81,6 +87,37 @@ build(builds)
 
 function resolve (_path) {
   return path.resolve(__dirname, _path)
+}
+
+function addAssets (builds, type, injectName) {
+  const
+    files = fs.readdirSync(resolve('../../ui/src/components/' + type)),
+    plugins = [ buble(bubleConfig) ],
+    outputDir = resolve(`../dist/${type}`)
+
+    fse.mkdirp(outputDir)
+
+  files
+    .filter(file => file.endsWith('.js'))
+    .forEach(file => {
+      const name = file.substr(0, file.length - 3).replace(/-([a-z])/g, g => g[1].toUpperCase())
+      builds.push({
+        rollup: {
+          input: {
+            input: resolve(`../src/components/${type}/${file}`),
+            plugins
+          },
+          output: {
+            file: addExtension(resolve(`../dist/${type}/${file}`), 'umd'),
+            format: 'umd',
+            name: `{{umdExportName}}.${injectName}.${name}`
+          }
+        },
+        build: {
+          minified: true
+        }
+      })
+    })
 }
 
 function build (builds) {

@@ -52,14 +52,14 @@ module.exports = {
 
     umdExportName: {
       type: 'string',
-      message: 'UMD export name (global variable, camel-cased)',
+      message: 'UMD export name (global variable, camelCased)',
       validate: val => val && val.length > 0
     },
 
     componentName: {
       type: 'string',
       when: 'features.component',
-      message: 'Component name (camel-case)',
+      message: 'Component name (PascalCase)',
       default: 'MyComponent',
       validate: val => val && val.length > 0
     },
@@ -93,6 +93,26 @@ module.exports = {
       message: 'App Extension description',
       default: 'A Quasar App Extension',
       validate: val => val && val.length > 0
+    },
+
+    preset: {
+      type: 'checkbox',
+      when: 'features.ae',
+      message: 'Pick the needed App Extension scripts:',
+      choices: [
+        {
+          name: 'Prompts script',
+          value: 'prompts'
+        },
+        {
+          name: 'Install script',
+          value: 'install'
+        },
+        {
+          name: 'Uninstall script',
+          value: 'uninstall'
+        }
+      ]
     },
 
     repositoryType: {
@@ -138,13 +158,17 @@ module.exports = {
   },
 
   filters: {
+    'app-extension/src/install.js': 'features.ae && preset.install',
+    'app-extension/src/prompts.js': 'features.ae && preset.prompts',
+    'app-extension/src/uninstall.js': 'features.ae && preset.uninstall',
     'app-extension/**/*': 'features.ae',
-    'ui/src/component/**/*': 'features.component',
-    'ui/src/directive/**/*': 'features.directive',
-    'ui/src/component/Component.sass': 'features.component && componentCss',
-    'ui/src/directive/Directive.sass': 'features.directive && directiveCss',
+    'ui/src/components/**/*': 'features.component',
+    'ui/src/directives/**/*': 'features.directive',
+    'ui/src/components/Component.sass': 'features.component && componentCss',
+    'ui/src/directives/Directive.sass': 'features.directive && directiveCss',
     'ui/src/**/*.sass': '(features.component && componentCss) || (features.directive && directiveCss)',
-    'build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)'
+    'ui/build/script.css.js': '(features.component && componentCss) || (features.directive && directiveCss)',
+    'ui/build/script.app-ext.js': 'features.ae && (features.component || features.directive)'
   },
 
   helpers,
