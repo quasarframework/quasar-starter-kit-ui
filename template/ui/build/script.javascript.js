@@ -11,7 +11,7 @@ const buildConf = require('./config')
 const buildUtils = require('./utils')
 
 const rollupPlugins = [
-  resolve.nodeResolve({
+  nodeResolve({
     extensions: ['.js'],
     preferBuiltins: false
   }),
