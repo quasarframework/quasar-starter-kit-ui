@@ -25,10 +25,10 @@ const builds = [
   {
     rollup: {
       input: {
-        input: resolve('entry/index.esm.js')
+        input: pathResolve('entry/index.esm.js')
       },
       output: {
-        file: resolve('../dist/index.esm.js'),
+        file: pathResolve('../dist/index.esm.js'),
         format: 'es'
       }
     },
@@ -40,10 +40,10 @@ const builds = [
   {
     rollup: {
       input: {
-        input: resolve('entry/index.common.js')
+        input: pathResolve('entry/index.common.js')
       },
       output: {
-        file: resolve('../dist/index.common.js'),
+        file: pathResolve('../dist/index.common.js'),
         format: 'cjs'
       }
     },
@@ -55,11 +55,11 @@ const builds = [
   {
     rollup: {
       input: {
-        input: resolve('entry/index.umd.js')
+        input: pathResolve('entry/index.umd.js')
       },
       output: {
         name: '{{umdExportName}}',
-        file: resolve('../dist/index.umd.js'),
+        file: pathResolve('../dist/index.umd.js'),
         format: 'umd'
       }
     },
@@ -81,9 +81,9 @@ build(builds)
  * Helpers
  */
 
-// function pathResolve (_path) {
-//   return path.resolve(__dirname, _path)
-// }
+function pathResolve (_path) {
+  return path.resolve(__dirname, _path)
+}
 
 // function addAssets (builds, type, injectName) {
 //   const
