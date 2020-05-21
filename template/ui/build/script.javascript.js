@@ -85,7 +85,8 @@ function pathResolve (_path) {
   return path.resolve(__dirname, _path)
 }
 
-// function addAssets (builds, type, injectName) {
+// eslint-disable-next-line no-unused-vars
+function addAssets (builds, type, injectName) {
 //   const
 //     files = fs.readdirSync(pathResolve('../../ui/src/components/' + type)),
 //     plugins = [ buble(bubleConfig) ],
