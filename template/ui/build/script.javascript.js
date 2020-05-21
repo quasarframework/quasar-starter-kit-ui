@@ -71,7 +71,7 @@ const builds = [
   }
 ]
 
-// Add your asset folders here
+// Add your asset folders here, if needed
 // addAssets(builds, 'icon-set', 'iconSet')
 // addAssets(builds, 'lang', 'lang')
 
@@ -87,35 +87,35 @@ function pathResolve (_path) {
 
 // eslint-disable-next-line no-unused-vars
 function addAssets (builds, type, injectName) {
-//   const
-//     files = fs.readdirSync(pathResolve('../../ui/src/components/' + type)),
-//     plugins = [ buble(bubleConfig) ],
-//     outputDir = pathResolve(`../dist/${type}`)
+  const
+    files = fs.readdirSync(pathResolve('../../ui/src/components/' + type)),
+    plugins = [ buble(bubleConfig) ],
+    outputDir = pathResolve(`../dist/${type}`)
 
-//     fse.mkdirp(outputDir)
+    fse.mkdirp(outputDir)
 
-//   files
-//     .filter(file => file.endsWith('.js'))
-//     .forEach(file => {
-//       const name = file.substr(0, file.length - 3).replace(/-([a-z])/g, g => g[1].toUpperCase())
-//       builds.push({
-//         rollup: {
-//           input: {
-//             input: pathResolve(`../src/components/${type}/${file}`),
-//             plugins
-//           },
-//           output: {
-//             file: addExtension(pathResolve(`../dist/${type}/${file}`), 'umd'),
-//             format: 'umd',
-//             name: `{{umdExportName}}.${injectName}.${name}`
-//           }
-//         },
-//         build: {
-//           minified: true
-//         }
-//       })
-//     })
-// }
+  files
+    .filter(file => file.endsWith('.js'))
+    .forEach(file => {
+      const name = file.substr(0, file.length - 3).replace(/-([a-z])/g, g => g[1].toUpperCase())
+      builds.push({
+        rollup: {
+          input: {
+            input: pathResolve(`../src/components/${type}/${file}`),
+            plugins
+          },
+          output: {
+            file: addExtension(pathResolve(`../dist/${type}/${file}`), 'umd'),
+            format: 'umd',
+            name: `{{umdExportName}}.${injectName}.${name}`
+          }
+        },
+        build: {
+          minified: true
+        }
+      })
+    })
+}
 
 function build (builds) {
   return Promise
