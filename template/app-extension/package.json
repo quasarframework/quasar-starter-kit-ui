@@ -4,7 +4,6 @@
   "description": "{{aeDescription}}",
   "author": "{{author}}",
   "license": "{{license}}",
-  "main": "src/index.js",
   "repository": {
     "type": "{{repositoryType}}",
     "url": "{{repositoryURL}}"
