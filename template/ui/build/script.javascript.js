@@ -10,15 +10,19 @@ const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const buildConf = require('./config')
 const buildUtils = require('./utils')
 
+const bubleConfig = {
+  objectAssign: 'Object.assign'
+}
+
+const nodeResolveConfig = {
+  extensions: ['.js'],
+  preferBuiltins: false
+}
+
 const rollupPlugins = [
-  nodeResolve({
-    extensions: ['.js'],
-    preferBuiltins: false
-  }),
+  nodeResolve(nodeResolveConfig),
   json(),
-  buble({
-    objectAssign: 'Object.assign'
-  })
+  buble(bubleConfig)
 ]
 
 const builds = [
@@ -92,7 +96,7 @@ function addAssets (builds, type, injectName) {
     plugins = [ buble(bubleConfig) ],
     outputDir = pathResolve(`../dist/${type}`)
 
-    fse.mkdirp(outputDir)
+  fse.mkdirp(outputDir)
 
   files
     .filter(file => file.endsWith('.js'))
