@@ -25,9 +25,9 @@
   "homepage": "{{homepage}}",
   "devDependencies": {
     {{#or componentCss directiveCss}}
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^10.0.2",
     "cssnano": "^4.1.10",
-    "postcss": "^7.0.18",
+    "postcss": "^8.1.9",
     "rtlcss": "^2.6.1",
     "sass": "^1.29.0",
     {{/or}}
