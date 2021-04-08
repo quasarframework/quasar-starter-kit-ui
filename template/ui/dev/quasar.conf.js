@@ -2,6 +2,7 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = function (ctx) {
   return {
@@ -53,6 +54,11 @@ module.exports = function (ctx) {
         chain.resolve.alias.merge({
           ui: path.resolve(__dirname, `../src/index.${ext}.js`)
         })
+
+        chain.plugin('define-ui')
+          .use(webpack.DefinePlugin, [{
+            __UI_VERSION__: `'${require('../package.json').version}'`
+          }])
       }
     },
 

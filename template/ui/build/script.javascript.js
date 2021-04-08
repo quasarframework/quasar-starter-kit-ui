@@ -6,11 +6,17 @@ const uglify = require('uglify-es')
 const buble = require('@rollup/plugin-buble')
 const json = require('@rollup/plugin-json')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const replace = require('@rollup/plugin-replace')
+
+const { version } = require('../package.json')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
 
 const rollupPlugins = [
+  replace({
+    __UI_VERSION__: `'${ version }'`
+  }),
   nodeResolve({
     extensions: ['.js'],
     preferBuiltins: false

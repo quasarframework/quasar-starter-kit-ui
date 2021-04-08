@@ -40,6 +40,7 @@
     "@rollup/plugin-buble": "^0.20.0",
     "@rollup/plugin-json": "^4.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-replace": "^2.4.2",
     "uglify-es": "^3.3.9",
     "zlib": "^1.0.5"
   },
