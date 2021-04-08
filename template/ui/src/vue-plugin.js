@@ -8,11 +8,9 @@ function install (app) {
 {{#features.directive}}  app.directive(Directive.name, Directive){{/features.directive}}
 }
 
-export default {
+export {
   version,
-
 {{#features.component}}  Component,{{/features.component}}
 {{#features.directive}}  Directive,{{/features.directive}}
-
   install
 }
