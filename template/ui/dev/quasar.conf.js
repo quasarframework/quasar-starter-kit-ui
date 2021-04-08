@@ -31,14 +31,10 @@ module.exports = function (ctx) {
     ],
 
     framework: {
-      iconSet: 'material-icons', // Quasar icon set
-      lang: 'en-us', // Quasar language pack
-      config: {},
+      // iconSet: 'material-icons', // Quasar icon set
+      // lang: 'en-US', // Quasar language pack
 
-      // Possible values for "importStrategy":
-      // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
-      // * 'all'  - Manually specify what to import
-      importStrategy: '{{importStrategy}}',
+      config: {},
 
       // Quasar plugins
       plugins: []
@@ -51,9 +47,11 @@ module.exports = function (ctx) {
     build: {
       vueRouterMode: 'history',
 
-      chainWebpack (chain) {
+      chainWebpack (chain, { isServer }) {
+        const ext = isServer ? 'common' : 'esm'
+
         chain.resolve.alias.merge({
-          'ui': path.resolve(__dirname, '../src/index.js')
+          ui: path.resolve(__dirname, `../src/index.${ext}.js`)
         })
       }
     },

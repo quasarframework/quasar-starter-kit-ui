@@ -25,7 +25,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.esm.js')
+        input: pathResolve('../src/index.esm.js')
       },
       output: {
         file: pathResolve('../dist/index.esm.js'),
@@ -40,7 +40,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.common.js')
+        input: pathResolve('../src/index.common.js')
       },
       output: {
         file: pathResolve('../dist/index.common.js'),
@@ -55,7 +55,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.umd.js')
+        input: pathResolve('../src/index.umd.js')
       },
       output: {
         name: '{{umdExportName}}',

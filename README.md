@@ -2,7 +2,7 @@
 ![Quasar Framework logo](https://cdn.quasar.dev/logo/svg/quasar-logo-full-inline.svg)
 
 # Quasar Framework UI Template
-> Starter Kit for building a UI component.
+> Starter Kit for building a UI component. **Compatible with Quasar UI v2 and Vue 3.**
 
 ## Usage
 
@@ -13,7 +13,7 @@ First, make sure you have Node >= 8 and NPM >= 5.
 $ npm install -g @quasar/cli
 
 # generate a project folder
-$ quasar create <folder_name> --kit ui
+$ quasar create <folder_name> --kit ui --branch next
 ```
 
 # Quasar Framework

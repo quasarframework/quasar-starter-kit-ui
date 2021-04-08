@@ -31,7 +31,7 @@
     "rtlcss": "^2.6.1",
     "sass": "^1.29.0",
     {{/or}}
-    "quasar": "^1.0.0",
+    "quasar": "^2.0.0-beta.12",
     "open": "^7.3.0",
     "fs-extra": "^8.1.0",
     "chalk": "^4.1.0",
@@ -44,6 +44,13 @@
     "zlib": "^1.0.5"
   },
   "browserslist": [
-    "last 1 version, not dead, ie >= 11"
+    "last 4 Chrome versions",
+    "last 4 Firefox versions",
+    "last 2 Edge versions",
+    "last 4 Safari versions",
+    "last 4 Android versions",
+    "last 4 ChromeAndroid versions",
+    "last 4 FirefoxAndroid versions",
+    "last 4 iOS versions"
   ]
 }
