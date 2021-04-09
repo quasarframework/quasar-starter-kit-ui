@@ -15,7 +15,10 @@ const buildUtils = require('./utils')
 
 const rollupPlugins = [
   replace({
-    __UI_VERSION__: `'${ version }'`
+    preventAssignment: false,
+    values: {
+      __UI_VERSION__: `'${ version }'`
+    }
   }),
   nodeResolve({
     extensions: ['.js'],
