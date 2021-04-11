@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+
+  <body>
+    <div id="q-app"></div>
+
+    <script type="module">
+      import { createApp } from 'vue'
+      import { Quasar } from 'quasar'
+      import iconSet from 'quasar/icon-set/material-icons'
+      import App from './dev/App.vue'
+      import {{name}} from './src'
+
+      const app = createApp(App)
+
+      app.use(Quasar, {
+        plugins: {
+        },
+        iconSet: iconSet
+      })
+      app.use({{name}})
+      app.mount('#q-app')
+    </script>
+  </body>
+</html>

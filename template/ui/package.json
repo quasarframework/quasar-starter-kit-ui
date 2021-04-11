@@ -1,21 +1,17 @@
 {
   "name": "quasar-ui-{{name}}",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "{{author}}",
   "description": "{{packageDescription}}",
   "license": "{{license}}",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.common.js",
+  "type": "module",
+  "main": "dist/quasar-ui-{{name}}.es.js",
+  "types": "dist/types",
   "scripts": {
-    "dev": "cd dev && yarn dev && cd ..",
-    "dev:umd": "yarn build && node build/script.open-umd.js",
-    "dev:ssr": "cd dev && yarn 'dev:ssr' && cd ..",
-    "dev:ios": "cd dev && yarn 'dev:ios' && cd ..",
-    "dev:android": "cd dev && yarn 'dev:android' && cd ..",
-    "dev:electron": "cd dev && yarn 'dev:electron' && cd ..",
-    "build": "node build/index.js",
-    "build:js": "node build/script.javascript.js"{{#or componentCss directiveCss}},
-    "build:css": "node build/script.css.js"{{/or}}
+    "dev": "vite",
+    "build:vite": "vite build",
+    "generate:types": "tsc",
+    "build": "yarn run build:vite && yarn run generate:types"
   },
   "repository": {
     "type": "{{repositoryType}}",
@@ -25,24 +21,15 @@
   "homepage": "{{homepage}}",
   "devDependencies": {
     {{#or componentCss directiveCss}}
-    "autoprefixer": "^10.0.2",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.1.9",
-    "rtlcss": "^2.6.1",
     "sass": "^1.29.0",
     {{/or}}
+    "vue": "^3.0.11",
     "quasar": "^2.0.0-beta.12",
-    "open": "^7.3.0",
-    "fs-extra": "^8.1.0",
-    "chalk": "^4.1.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.45.0",
-    "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-json": "^4.0.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@rollup/plugin-replace": "^2.4.2",
-    "uglify-js": "^3.13.3",
-    "zlib": "^1.0.5"
+    "@quasar/extras": "^1.10.2",
+    "vite": "^2.1.5",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.11",
+    "typescript": "^4.2.4"
   },
   "browserslist": [
     "last 4 Chrome versions",
