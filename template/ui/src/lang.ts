@@ -1,6 +1,5 @@
 import { provide, inject, ref } from 'vue'
 export const LANG_SYMBOL = Symbol('{{name}}Lang')
-import { Language } from './lang/lang'
 
 export const provideLang = (data: any, app?: any) => {
   if (app) {
@@ -8,29 +7,22 @@ export const provideLang = (data: any, app?: any) => {
   } else {
     provide(LANG_SYMBOL, ref(data))
   }
-  console.log(`%c[{{name}}] Provided lang ${data.lang}`, 'color: green')
 }
 
-export const useLang = (app?: any) => {
-  let lang
-  if (!app) {
-    lang = inject(LANG_SYMBOL) as any
-  } else {
-    lang = undefined
-  }
+export const useLang = () => {
+  const lang = inject(LANG_SYMBOL) as any
   return lang
 }
 
 export const loadLang = async (locale: string, app?: any) => {
-  const lang = useLang(app)
+  const lang = ref({})
+  provideLang(lang, app)
   try {
     const data = (await import(`./lang/${locale}.ts`)).default
 
     if (data) {
       if (lang?.value) {
         lang.value = data
-      } else {
-        provideLang(data, app)
       }
     }
   } catch (e) {
