@@ -146,7 +146,7 @@ exports.helpers = {
   }
 }
 
-exports.complete = function (data, { chalk }) {
+exports.complete = async function (data, { chalk }) {
   const green = chalk.green
 
   sortDependencies(data, green)
@@ -154,16 +154,13 @@ exports.complete = function (data, { chalk }) {
   const cwd = path.join(process.cwd(), data.inPlace ? '' : data.destDirName, 'ui')
 
   if (data.autoInstall) {
-    installDependencies(cwd, data.autoInstall, green)
-      .then(() => installDependencies(path.join(cwd, 'dev'), data.autoInstall, green))
-      .then(() => {
-        printMessage(data, green)
-      })
-      .catch(e => {
-        console.log(chalk.red('Error:'), e)
-      })
+    try {
+      await installDependencies(cwd, data.autoInstall, green)
+      await installDependencies(path.join(cwd, 'dev'), data.autoInstall, green)
+    } catch(e) {
+      console.log(chalk.red('Error:'), e)
+    }
   }
-  else {
-    printMessage(data, chalk)
-  }
+
+  printMessage(data, chalk)
 }
