@@ -20,6 +20,10 @@ Quasar CLI will retrieve it from NPM and install the extension.
 quasar ext remove {{name}}
 ```
 
+# Build
+```bash
+yarn build
+```
 # Info
 > Add longer information here that will help the user of your app extension.
 
