@@ -20,16 +20,15 @@
   "bugs": "{{bugs}}",
   "homepage": "{{homepage}}",
   "devDependencies": {
-    {{#or componentCss directiveCss}}
     "sass": "^1.29.0",
-    {{/or}}
     "vue": "^3.0.11",
     "quasar": "^2.0.0-beta.12",
     "@quasar/extras": "^1.10.2",
     "vite": "^2.1.5",
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "vue-router": "^4.0.0"
   },
   "browserslist": [
     "last 4 Chrome versions",

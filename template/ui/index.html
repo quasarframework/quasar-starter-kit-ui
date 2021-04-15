@@ -12,7 +12,20 @@
       import iconSet from 'quasar/icon-set/material-icons'
       import App from './dev/App.vue'
       import {{name}} from './src'
+      import { createRouter, createWebHashHistory } from 'vue-router'
+      import pages from './dev/pages'
 
+      const children = pages.map(page => ({
+        path: page.path,
+        component: page.fileImport
+      }))
+
+      const router = createRouter({
+        history: createWebHashHistory(),
+        routes: [
+          ...children
+        ]
+      })
       const app = createApp(App)
 
       app.use(Quasar, {
@@ -20,6 +33,7 @@
         },
         iconSet: iconSet
       })
+      app.use(router)
       app.use({{name}})
       app.mount('#q-app')
     </script>
