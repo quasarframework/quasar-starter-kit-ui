@@ -15,7 +15,7 @@ export const useLang = () => {
 }
 
 export const loadLang = async (locale: string, app?: any) => {
-  const lang = ref()
+  const lang = useLang() || ref()
   provideLang(lang, app)
   try {
     const data = (await import(`./lang/${locale}.ts`)).default
