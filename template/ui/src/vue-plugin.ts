@@ -1,6 +1,6 @@
 {{#features.component}}import Component from './components/Component.vue'{{/features.component}}
 {{#features.directive}}import Directive from './directives/Directive'{{/features.directive}}
-import { provideLang, useLang, loadLang } from './lang'
+import { loadLang } from './lang'
 
 // const version = __UI_VERSION__
 
