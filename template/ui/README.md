@@ -121,7 +121,7 @@ $ yarn build
 ```
 
 # Adding Testing Components
-in the `ui/dev/pages` you can add Vue files to test your component/directive. When using `yarn dev` to build the UI, any pages in that location will automatically be picked up by dynamic routing and added to the test page.
+In the `ui/dev/pages` you can add Vue files to test your component/directive. When using `yarn dev` to build the UI, any pages in that location will automatically be picked up by dynamic routing and added to the test page.
 
 # Adding Assets
 Assets like language or icon-sets should be dynamically imported with `import()`. Vite will resolve these imports when building.
