@@ -1,4 +1,25 @@
 {
+  "version": "0.1.0",
   "private": true,
-  "workspaces": ["app-extension", "ui"]
+  "workspaces": [
+    "app-extension",
+    "ui"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "release": "yarn run build && release-it"
+  },
+  "devDependencies": {
+    "release-it": "^14.6.1",
+    "release-it-yarn-workspaces": "^2.0.1"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "release-it-yarn-workspaces": true
+    },
+    "npm": false
+  }
 }
