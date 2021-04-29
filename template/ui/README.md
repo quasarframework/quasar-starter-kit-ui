@@ -28,11 +28,13 @@ Install the [App Extension](../app-extension).
 Create and register a boot file:
 
 ```js
-import Vue from 'vue'
+import { boot } from 'quasar/wrappers'
 import Plugin from 'quasar-ui-{{name}}'{{#or componentCss directiveCss}}
 import 'quasar-ui-{{name}}/dist/index.css'{{/or}}
 
-Vue.use(Plugin)
+export default boot(({ app }) => {
+  app.use(Plugin)
+})
 ```
 
 **OR**:
@@ -59,14 +61,17 @@ export default {
 </script>
 ```
 
-## Vue CLI project
+## Vue CLI/Vite project
 
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
+import App from './App.vue'
 import Plugin from 'quasar-ui-{{name}}'{{#or componentCss directiveCss}}
 import 'quasar-ui-{{name}}/dist/index.css'{{/or}}
 
-Vue.use(Plugin)
+createApp(App)
+  .use(Plugin)
+  .mount('#app')
 ```
 
 **OR**:
