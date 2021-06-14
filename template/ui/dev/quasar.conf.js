@@ -65,6 +65,13 @@ module.exports = function (ctx) {
     devServer: {
       // port: 8080,
       open: true // opens browser window automatically
+    },
+
+    ssr: {
+      middlewares: [
+        ctx.prod ? 'compression' : '',
+        'render' // keep this as last one
+      ]
     }
   }
 }
