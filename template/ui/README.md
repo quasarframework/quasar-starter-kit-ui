@@ -3,6 +3,8 @@
 [![npm](https://img.shields.io/npm/v/quasar-ui-{{name}}.svg?label=quasar-ui-{{name}})](https://www.npmjs.com/package/quasar-ui-{{name}})
 [![npm](https://img.shields.io/npm/dt/quasar-ui-{{name}}.svg)](https://www.npmjs.com/package/quasar-ui-{{name}})
 
+**Compatible with Quasar UI v2 and Vue 3**.
+
 {{#features.component}}
 # Component {{componentName}}
 > Short description of the component
