@@ -48,11 +48,9 @@ module.exports = function (ctx) {
     build: {
       vueRouterMode: 'history',
 
-      chainWebpack (chain, { isServer }) {
-        const ext = isServer ? 'common' : 'esm'
-
+      chainWebpack (chain) {
         chain.resolve.alias.merge({
-          ui: path.resolve(__dirname, `../src/index.${ext}.js`)
+          ui: path.resolve(__dirname, `../src/index.esm.js`)
         })
 
         chain.plugin('define-ui')

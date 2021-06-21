@@ -155,7 +155,6 @@ exports.complete = function (data, { chalk }) {
 
   if (data.autoInstall) {
     installDependencies(cwd, data.autoInstall, green)
-      .then(() => installDependencies(path.join(cwd, 'dev'), data.autoInstall, green))
       .then(() => {
         printMessage(data, green)
       })

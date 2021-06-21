@@ -11,13 +11,6 @@
     "dev:android": "quasar dev -m android",
     "dev:electron": "quasar dev -m electron"
   },
-  "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "core-js": "^3.0.0"
-  },
-  "devDependencies": {
-    "@quasar/app": "^3.0.0"
-  },
   "browserslist": [
     "last 10 Chrome versions",
     "last 10 Firefox versions",
