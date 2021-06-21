@@ -2,15 +2,24 @@ const path = require('path')
 const fs = require('fs')
 const fse = require('fs-extra')
 const rollup = require('rollup')
-const uglify = require('uglify-es')
+const uglify = require('uglify-js')
 const buble = require('@rollup/plugin-buble')
 const json = require('@rollup/plugin-json')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const replace = require('@rollup/plugin-replace')
+
+const { version } = require('../package.json')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
 
 const rollupPlugins = [
+  replace({
+    preventAssignment: false,
+    values: {
+      __UI_VERSION__: `'${ version }'`
+    }
+  }),
   nodeResolve({
     extensions: ['.js'],
     preferBuiltins: false
@@ -25,7 +34,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.esm.js')
+        input: pathResolve('../src/index.esm.js')
       },
       output: {
         file: pathResolve('../dist/index.esm.js'),
@@ -40,7 +49,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.common.js')
+        input: pathResolve('../src/index.common.js')
       },
       output: {
         file: pathResolve('../dist/index.common.js'),
@@ -55,7 +64,7 @@ const builds = [
   {
     rollup: {
       input: {
-        input: pathResolve('entry/index.umd.js')
+        input: pathResolve('../src/index.umd.js')
       },
       output: {
         name: '{{umdExportName}}',
