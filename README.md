@@ -13,7 +13,7 @@ First, make sure you have Node >= 8 and NPM >= 5.
 $ npm install -g @quasar/cli
 
 # generate a project folder
-$ quasar create <folder_name> --kit ui
+$ quasar create <folder_name> --kit ui --branch v1
 ```
 
 # Quasar Framework
