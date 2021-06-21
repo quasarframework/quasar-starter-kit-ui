@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> next
 ![Quasar Framework logo](https://cdn.quasar.dev/logo-v2/header.png)
 
 # Quasar Framework UI Template
