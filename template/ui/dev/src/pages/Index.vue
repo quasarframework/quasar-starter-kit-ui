@@ -25,8 +25,10 @@
 import pages from '../router/pages'
 
 export default {
-  created () {
-    this.pages = pages
+  setup () {
+    return {
+      pages
+    }
   }
 }
 </script>
