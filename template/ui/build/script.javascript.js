@@ -133,9 +133,12 @@ function build (builds) {
 }
 
 function genConfig (opts) {
+  const pkg = require('../package.json')
+  const pkgDependencies = Object.keys(pkg.dependencies || [])
+
   Object.assign(opts.rollup.input, {
     plugins: rollupPlugins,
-    external: [ 'vue', 'quasar' ]
+    external: [ 'vue', 'quasar' ].concat(pkgDependencies)
   })
 
   Object.assign(opts.rollup.output, {
