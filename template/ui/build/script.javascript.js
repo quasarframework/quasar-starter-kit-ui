@@ -53,7 +53,8 @@ const builds = [
       },
       output: {
         file: pathResolve('../dist/index.common.js'),
-        format: 'cjs'
+        format: 'cjs',
+        exports: 'auto'
       }
     },
     build: {
