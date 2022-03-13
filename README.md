@@ -1,5 +1,8 @@
 ![Quasar Framework logo](https://cdn.quasar.dev/logo-v2/header.png)
 
+# DEPRECATED
+**DEPRECATED in favor of https://github.com/quasarframework/quasar/tree/dev/create-quasar**
+
 # Quasar Framework UI Template
 > Starter Kit for building a UI component. **Compatible with Quasar UI v2 and Vue 3.**
 
